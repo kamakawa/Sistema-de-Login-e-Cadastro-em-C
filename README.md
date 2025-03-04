@@ -30,3 +30,11 @@ Este projeto é uma implementação simples de um sistema de login e cadastro de
 
    ```bash
    git clone https://github.com/seu-usuario/sistema-login-c.git
+
+   ## Possíveis Melhorias Futuras
+
+- **Segurança:** Implementar o hash das senhas para evitar o armazenamento em texto puro.
+- **Interface Gráfica:** Desenvolver uma interface utilizando bibliotecas como GTK para melhorar a experiência do usuário.
+- **Modularização:** Refatorar o código, separando as funções em múltiplos arquivos para facilitar a manutenção.
+- **Validações Avançadas:** Ampliar as verificações de entrada e aprimorar o tratamento de erros para tornar o sistema mais robusto.
+
