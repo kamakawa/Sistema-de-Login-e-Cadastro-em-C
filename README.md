@@ -1,79 +1,80 @@
-# Sistema de Login e Cadastro em C
+# Sistema Básico de Cadastro e Login em C
 
-Este projeto é uma implementação simples de um sistema de login e cadastro desenvolvido em linguagem C. O sistema permite o cadastro de usuários e posterior autenticação, possibilitando também a atualização dos dados cadastrais.
-
-## Funcionalidades
-
-### Cadastro de Usuários
-- Coleta de dados: nome, data de nascimento (dia, mês e ano) e senha (com confirmação);
-- Validações básicas para garantir a integridade dos dados (ex.: dia, mês e ano válidos, verificação de senhas iguais);
-- Armazenamento dos dados em um arquivo binário (`cadastro.dat`);
-- Uso de alocação dinâmica para suportar um número variável de usuários.
-
-### Login e Autenticação
-- Solicita nome e senha do usuário;
-- Validação das credenciais comparando com os dados armazenados;
-- Exibição do perfil do usuário autenticado e opção de atualizar dados cadastrais.
-
-### Atualização do Cadastro
-- Permite que o usuário altere seu nome, data de nascimento ou senha;
-- Realiza validação para garantir que a nova senha seja confirmada corretamente.
-
-## Como os Dados São Armazenados?
-Os dados dos usuários são salvos no arquivo binário `cadastro.dat`, garantindo persistência entre execuções do programa. O formato de armazenamento segue a estrutura:
-
-```
-[NOME (50 bytes)][SENHA (10 bytes)][DIA (int)][MÊS (int)][ANO (int)]
-```
-
-## Requisitos
-- Compilador C (ex.: GCC);
-- Ambiente de execução com suporte a terminal (Linux, macOS ou Windows).
-
-## Como Compilar e Executar
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/kamakawa/Sistema-de-Login-e-Cadastro-em-C.git
-   cd Sistema-de-Login-e-Cadastro-em-C
-   ```
-
-2. Compile o código:
-   ```bash
-   gcc main.c -o sistema
-   ```
-   Se houver múltiplos arquivos `.c`, compile da seguinte forma:
-   ```bash
-   gcc *.c -o sistema
-   ```
-
-3. Execute o programa:
-   ```bash
-   ./sistema
-   ```
-
-## Possíveis Melhorias Futuras
-- **Segurança**: Implementar hash de senhas para evitar armazenamento em texto puro.
-- **Interface Gráfica**: Utilizar bibliotecas como GTK para melhorar a experiência do usuário.
-- **Modularização**: Separar funções em múltiplos arquivos para facilitar a manutenção.
-- **Validações Avançadas**: Melhorar as verificações de entrada e tratamento de erros.
-
-## Como Contribuir
-Ficamos felizes com contribuições! Para contribuir:
-1. Faça um fork do repositório.
-2. Crie uma branch para sua contribuição (`git checkout -b minha-melhoria`).
-3. Faça suas alterações e commit (`git commit -m "Descrição da melhoria"`).
-4. Envie para o repositório remoto (`git push origin minha-melhoria`).
-5. Abra um Pull Request.
-
-## Licença
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Um sistema simples de cadastro e autenticação de usuários desenvolvido em linguagem C, com foco na persistência de dados em arquivo binário e no gerenciamento dinâmico de memória. **Este projeto foi desenvolvido de forma autônoma durante meu 2º período da faculdade com o objetivo de solidificar meus conhecimentos em programação C e explorar conceitos fundamentais como manipulação de arquivos e alocação dinâmica de memória.** É uma base sólida para aplicações que exigem armazenamento e recuperação de informações de usuário.
 
 ---
 
-Caso tenha dúvidas ou sugestões, sinta-se à vontade para abrir uma issue ou entrar em contato!
+## 🚀 Funcionalidades
 
-🚀 Desenvolvido por Eric Kamakawa
+* **Cadastro de Novos Usuários:** Permite o registro de nome, username, data de nascimento e senha.
+* **Login de Usuários:** Autentica usuários existentes com base em username e senha.
+* **Persistência de Dados:** Salva e carrega dados de usuários em um arquivo binário (`cadastro.dat`), garantindo que as informações não se percam após o encerramento do programa.
+* **Edição de Cadastro:** Usuários autenticados podem atualizar seu nome, username, data de nascimento e senha.
+* **Gerenciamento Dinâmico de Memória:** Utiliza `malloc` e `realloc` para alocar e realocar memória conforme a necessidade de usuários, otimizando o uso de recursos.
+* **Validação de Entrada:** Inclui validações básicas para datas e confirmação de senha.
 
+---
 
+## 🛠️ Tecnologias Utilizadas
 
+* **Linguagem de Programação:** C
+* **Manipulação de Arquivos:** `stdio.h`
+* **Gerenciamento de Memória:** `stdlib.h`
+* **Manipulação de Strings:** `string.h`
+
+---
+
+## Como Compilar e Executar
+
+Para compilar e executar este projeto, você precisará de um compilador C (como GCC).
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+    cd nome-do-repositorio
+    ```
+    *(Ajuste `seu-usuario/nome-do-repositorio` para o link real do seu repositório)*
+
+2.  **Compile o código:**
+    ```bash
+    gcc main.c -o cadastro_login
+    ```
+    *(Assumindo que o arquivo principal se chama `main.c`. Se for `seu_arquivo.c`, ajuste o comando)*
+
+3.  **Execute o programa:**
+    ```bash
+    ./cadastro_login
+    ```
+
+---
+
+## 🧠 Conceitos Demonstrados
+
+Este projeto é um excelente exemplo prático de:
+
+* **Estruturas (Structs):** Organização de dados relacionados.
+* **Ponteiros e Alocação Dinâmica:** Flexibilidade no gerenciamento de memória.
+* **Operações de I/O em Arquivos:** Leitura e escrita de dados binários.
+* **Manipulação de Strings:** Funções essenciais para trabalhar com texto.
+* **Modularização de Código:** Organização em funções para reuso e clareza.
+* **Autenticação Básica:** Implementação de um fluxo de login e verificação.
+
+---
+
+## 💡 Próximos Passos (Possíveis Melhorias)
+
+* **Segurança de Senhas:** Implementar hashing (ex: SHA-256) para armazenar senhas de forma segura.
+* **Tratamento de Erros Aprimorado:** Mensagens de erro mais detalhadas e recuperação de erros mais robusta.
+* **Interface do Usuário (UI):** Melhorar a experiência do usuário com uma interface mais interativa (embora para um console, isso signifique clareza).
+* **Remoção de Usuários:** Adicionar funcionalidade para deletar um cadastro existente.
+* **Busca de Usuários:** Permitir buscar usuários por critérios específicos.
+
+---
+
+## Contato
+
+* **Eric Kamakawa** - [erickamakawa@hotmail.com](mailto:erickamakawa@hotmail.com)
+* **LinkedIn:** [linkedin.com/in/erickamakawa](https://www.linkedin.com/in/erickamakawa)
+* **GitHub:** [github.com/kamakawa](https://github.com/kamakawa)
+
+---
